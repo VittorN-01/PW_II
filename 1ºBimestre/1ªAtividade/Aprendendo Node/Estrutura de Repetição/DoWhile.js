@@ -1,0 +1,94 @@
+// Atividade Laço DoWhile
+import chalk from "chalk";
+import inquirer from "inquirer";
+
+
+function runProgram() {
+    var texto = "Veja o Peso Ideal";
+
+    console.log(chalk.black.bgWhite(texto));
+
+    inquirer
+        .prompt([
+            {
+                message: "Seu Peso (Kg):",
+                name: "peso",
+            },
+            {
+                message: "Seu Sexo (M ou F):",
+                name: "sexo",
+            },
+            {
+                message: "Sua Altura (em metros):",
+                name: "altura",
+            }
+        ])
+        .then((answers) => {
+            const p = parseFloat(answers.peso); 
+            const alt = Altura(parseFloat(answers.altura)); 
+            const sexo = Sexo(answers.sexo); 
+
+            if (sexo === "Masculino") {
+                const pi = 52 + (0.75 * (alt - 152.4));
+                Resultado(pi, p);
+            }
+
+            if (sexo === "Feminino") {
+                const pi = 52 + (0.67 * (alt - 152.4));
+                Resultado(pi, p);
+            }
+
+            askToContinue();
+        });
+}
+
+function Resultado(pesoIdeal, peso) {
+    if (pesoIdeal > peso) {
+        console.log(chalk.bgBlue("Abaixo do peso"));
+    } else if (pesoIdeal === peso) {
+        console.log(chalk.bgGreen("Peso Ideal"));
+    } else {
+        console.log(chalk.bgRed("Acima do peso"));
+    }
+}
+
+
+// Laço de Repetição
+// Pergunta se deseja continuar / reiniciar o programa
+function askToContinue() {
+    inquirer
+        .prompt([
+            {
+                type: "confirm",
+                message: "Deseja continuar?",
+                name: "continue",
+            }
+        ])
+        .then((answer) => {
+            if (answer.continue) {
+                // Reinicia o programa
+                runProgram(); 
+            } else {
+                // Encerra
+                console.log(chalk.green("Obrigado por usar o programa!"));
+            }
+        });
+}
+
+function Sexo(sexo) {
+    if (sexo.toLowerCase() === "m") {
+        return "Masculino";
+    } else if (sexo.toLowerCase() === "f") {
+        return "Feminino";
+    } else {
+        return "Desconhecido";
+    }
+}
+
+function Altura(altura) {
+    return altura * 100;
+}
+
+runProgram();
+
+// Finalizado e testado //
