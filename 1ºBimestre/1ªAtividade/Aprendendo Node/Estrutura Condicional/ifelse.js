@@ -1,0 +1,39 @@
+import chalk from "chalk"
+import inquirer from "inquirer"
+
+
+var texto = "Veja se você é Maior ou Menor de idade"
+
+console.log(chalk.black.bgWhite(texto))
+
+// Atividade
+inquirer
+    .prompt([
+        {
+            message: "Ano de Nascimento:",
+            name: "anoNasc"
+        },
+        {
+            message: "Ano Atual:",
+            name: "anoAtual"
+        }
+    ])
+    .then((answers) => {
+        const idade = Idade(answers.anoAtual, answers.anoNasc);
+        
+        //Condição If e Else !!!
+        if (idade >= 18){
+            console.log(chalk.white.bgRed(idade + " anos, Maior de idade"));
+        }else{
+            console.log(chalk.bgBlue(idade + " anos, Menor de Idade"));
+        }
+    })
+
+
+    function Idade(anoAtual, anoNasc) {
+        return anoAtual - anoNasc;
+    }
+
+
+    // Finalizado e testado//
+    
