@@ -1,0 +1,48 @@
+const http = require("http");
+const url = require("url");
+
+const porta = 5000;
+
+http.createServer((req, res) => {
+    res.setHeader("Content-Type", "text/html");
+
+    res.write(`
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercício Variável (Const)</title>
+    </head>
+    `); 
+
+    console.log("Exercício Variável (Const)");
+    const urlInfo = url.parse(req.url, true);
+    const altura = urlInfo.query.altura;
+    const messi = 1.70;
+
+    res.statusCode = 200;
+
+    res.write("<h1>Veja se você é MAIOR ou MENOR que o Messi</h1>");
+
+    if(!altura){
+        res.end(
+            "<form method='GET' action='http://localhost:5000/'>" +
+                "<label>Digite sua altura (em metros): </label>" +
+                "<br>" +
+                "<input type='text' name='altura' />" +
+                "<br>" +
+                "<input type='submit' value='ENVIAR'/>" +
+            "</form>"
+        );
+    } else {
+        const resultado = altura - messi;
+        if(resultado < 0 ){
+            res.end(`Você é MENOR que o Messi !!`)
+        }else if(resultado == 0){
+            res.end(`Você tem a MESMA altura que o Messi !!`)
+        }else{
+            res.end(`Você é MAIOR que o Messi !!`)
+        }
+    }
+}).listen(porta, () => {
+    console.log(`Servidor rodando na porta: ${porta}`);
+});
