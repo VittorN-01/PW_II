@@ -1,0 +1,47 @@
+const http = require("http")
+const url = require("url")
+
+const porta = 5000
+
+http.createServer((req, res) => {
+    res.setHeader("Content-Type", "text/html");
+
+    res.write(`
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercício Fatorial</title>
+    </head>
+    `);
+
+    console.log("Exercício Fatorial")
+    const urlInfo = url.parse(req.url, true)
+    const num = parseInt(urlInfo.query.num)
+
+    res.statusCode = 200
+
+    res.write("<h1>Veja o fatorial de qualquer número</h1>")
+
+    if (isNaN(num)) {
+        res.end(
+            "<form method='GET' action='http://localhost:5000/'>" +
+                "<label>Número</label>" +
+                "<br>" +
+                "<input type='text' name='num' />" +
+                "<br>" +
+                "<br>" +
+                "<input type='submit' value='ENVIAR' />" +
+            "</form>"
+        )
+    } else {
+        let i = 1;
+        let fatorial = 1;
+        while (i <= num) {
+            fatorial *= i;
+            i++;
+        }
+        res.end(`<h2>Fatorial: ${fatorial}</h2>`)
+    }
+}).listen(porta, () => {
+    console.log(`Servidor rodando na porta: ${porta}`)
+})
