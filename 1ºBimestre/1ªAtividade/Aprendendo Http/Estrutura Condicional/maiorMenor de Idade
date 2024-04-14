@@ -3,6 +3,8 @@ const url = require("url")
 
 const porta = 5000
 
+console.log("Exercício Maior/Menor de Idade")
+
 http.createServer((req, res) => {
     res.setHeader("Content-Type", "text/html");
 
@@ -14,7 +16,7 @@ http.createServer((req, res) => {
     </head>
     `); 
 
-    console.log("Exercício Maior/Menor de Idade")
+    
     const urlInfo = url.parse(req.url, true)
     const anoNasc = parseInt(urlInfo.query.anoNasc)
     const anoAtual = parseInt(urlInfo.query.anoAtual)
@@ -41,6 +43,7 @@ http.createServer((req, res) => {
     } else {
         const idade = anoAtual - anoNasc
         res.end(`<h2>Você tem ${idade} anos</h2>`)
+        console.log("Você tem "+ idade + " anos")
     }
 }).listen(porta, () => {
     console.log(`Servidor rodando na porta: ${porta}`)
