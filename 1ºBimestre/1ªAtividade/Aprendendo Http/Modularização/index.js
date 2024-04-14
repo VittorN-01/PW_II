@@ -4,6 +4,9 @@ const calcularNota = require("./calcularNota.js");
 
 const porta = 5000;
 
+console.log("Exercício Média; Exercício Modularização");
+
+
 http.createServer((req, res) => {
     res.setHeader("Content-Type", "text/html");
 
@@ -15,7 +18,6 @@ http.createServer((req, res) => {
     </head>
     `);
 
-    console.log("Exercício Média; Exercício Modularização");
     const urlInfo = url.parse(req.url, true);
     const nota1 = parseFloat(urlInfo.query.nota1);
     const nota2 = parseFloat(urlInfo.query.nota2);
@@ -56,10 +58,13 @@ http.createServer((req, res) => {
         const media = calcularNota(nota1, nota2, nota3, nota4);
         if (media >= 6) {
             res.end(`Média: ${media}, PASSOU!`);
+            console.log(chalk.bgGreen("Média: " + media + ", PASSOU!"))
         } else if (media >= 5) {
             res.end(`Média: ${media}, Recuperação`);
+            console.log("Média: " + media + ", Recuperação!")
         } else {
             res.end(`Média: ${media}, Reprovado`);
+            console.log("Média: " + media + ", Reprovado!")
         }
     }
 }).listen(porta, () => {
