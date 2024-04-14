@@ -3,6 +3,8 @@ const url = require("url")
 
 const porta = 5000
 
+console.log("Exercício Média")
+
 http.createServer((req, res) => {
     res.setHeader("Content-Type", "text/html");
 
@@ -14,7 +16,7 @@ http.createServer((req, res) => {
     </head>
     `);
 
-    console.log("Exercício Média")
+    
     const urlInfo = url.parse(req.url, true)
     const nota1 = parseFloat(urlInfo.query.nota1)
     const nota2 = parseFloat(urlInfo.query.nota2)
@@ -56,10 +58,13 @@ http.createServer((req, res) => {
         const media = (nota1 + nota2 + nota3 + nota4) / 4
         if (media <= 5){
             res.end(`Sua Média é: `+ media + `, REPROVADO`)
+            console.log("Sua Média é: "+ media + ", REPROVADO")
         } else if (media <= 7){
             res.end(`Sua Média é: `+ media + `, Passou, mas pode melhorar`)
+            console.log("Sua Média é: "+ media + ", Passou, mas pode melhorar")
         } else{
             res.end(`Sua Média é: `+ media + `, PASSOU`)
+            console.log("Sua Média é: "+ media + ", PASSOU")
         }
     }
 
