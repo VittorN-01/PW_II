@@ -3,6 +3,8 @@ const url = require("url")
 
 const porta = 5000
 
+console.log("Exercício Restrição")
+
 http.createServer((req, res) => {
     res.setHeader("Content-Type", "text/html");
 
@@ -14,7 +16,6 @@ http.createServer((req, res) => {
     </head>
     `);
 
-    console.log("Exercício Restrição")
     const urlInfo = url.parse(req.url, true)
     const pl = parseFloat(urlInfo.query.pl)
 
@@ -37,25 +38,31 @@ http.createServer((req, res) => {
             case 1: 
             case 2:
                 res.end(`Dia de Restição: Segunda-Feira`)
+                console.log("Dia de Restição: Segunda-Feira")
                 break;
             case 3:
             case 4:
                 res.end(`Dia de Restição: Terça-Feira`)
+                console.log("Dia de Restição: Terça-Feira")
                 break;
             case 5:
             case 6:
                 res.end(`Dia de Restição: Quarta-Feira`)
+                console.log("Dia de Restição: Quarta-Feira")
                 break;
             case 7:
             case 8:
                 res.end(`Dia de Restição: Quinta-Feira`)
+                console.log("Dia de Restição: Quinta-Feira")
                 break;
             case 9:
             case 0:
                 res.end(`Dia de Restição: Sexta-Feira`)
+                console.log("Dia de Restição: Sexta-Feira")
                 break;
             default:
                 res.end(`Inválido`)
+                console.log("Inválido")
         }
     }
 
