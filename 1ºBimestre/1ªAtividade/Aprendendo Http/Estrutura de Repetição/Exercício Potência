@@ -3,6 +3,8 @@ const url = require("url")
 
 const porta = 5000
 
+console.log("Exercício Potência")
+
 http.createServer((req, res) => {
     res.setHeader("Content-Type", "text/html");
 
@@ -13,7 +15,7 @@ http.createServer((req, res) => {
         <title>Exercício Potência</title>
     </head>
     `);
-    console.log("Exercício Potência")
+    
     const urlInfo = url.parse(req.url, true)
     const base = parseInt(urlInfo.query.base)
     const expoente = parseInt(urlInfo.query.expoente)
@@ -43,6 +45,7 @@ http.createServer((req, res) => {
         }
 
         res.end(`<h2>Potenciação: ${p} </h2>`)
+        console.log("Potenciação: "+ p)
     }
 }).listen(porta, () => {
     console.log(`Servidor rodando na porta: ${porta}`)
