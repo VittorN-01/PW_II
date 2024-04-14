@@ -3,6 +3,8 @@ const url = require("url");
 
 const porta = 5000;
 
+console.log("Exercício Variável (Var)");
+
 http.createServer((req, res) => {
     res.setHeader("Content-Type", "text/html");
 
@@ -14,7 +16,7 @@ http.createServer((req, res) => {
     </head>
     `); 
 
-    console.log("Exercício Variável (Var)");
+    
     const urlInfo = url.parse(req.url, true);
     var nome = urlInfo.query.nome;
 
@@ -34,6 +36,7 @@ http.createServer((req, res) => {
         );
     } else {
         res.end(`<h2>Seja bem-vindo(a) ${nome}, seu cadastro foi finalizado!</h2>`);
+        console.log("Seja bem-vindo(a)" + nome + ", seu cadastro foi finalizado!")
     }
 }).listen(porta, () => {
     console.log(`Servidor rodando na porta: ${porta}`);
