@@ -3,6 +3,8 @@ const url = require("url")
 
 const porta = 5000
 
+console.log("Exercício Fatorial")
+    
 http.createServer((req, res) => {
     res.setHeader("Content-Type", "text/html");
 
@@ -14,7 +16,7 @@ http.createServer((req, res) => {
     </head>
     `);
 
-    console.log("Exercício Fatorial")
+    
     const urlInfo = url.parse(req.url, true)
     const num = parseInt(urlInfo.query.num)
 
@@ -41,6 +43,7 @@ http.createServer((req, res) => {
             i++;
         }
         res.end(`<h2>Fatorial: ${fatorial}</h2>`)
+        console.log("Fatorial: " + fatorial)
     }
 }).listen(porta, () => {
     console.log(`Servidor rodando na porta: ${porta}`)
