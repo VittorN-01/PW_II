@@ -3,6 +3,8 @@ const url = require("url")
 
 const porta = 5000
 
+console.log("Exercício Tabuada; Exercício Vetor")
+
 http.createServer((req, res) => {
     res.setHeader("Content-Type", "text/html");
 
@@ -14,7 +16,7 @@ http.createServer((req, res) => {
     </head>
     `);
 
-    console.log("Exercício Tabuada; Exercício Vetor")
+    
     const urlInfo = url.parse(req.url, true)
     const num = parseInt(urlInfo.query.num)
 
@@ -39,6 +41,7 @@ http.createServer((req, res) => {
         for(let i = 0; i < 11; i++){
             array [i] = num * i;
             res.write(`<li>${num} x ${i} = ${array[i]}</li>`)
+            console.log(num + " x " + i + " = " + array[i])
         }
         res.write("</ul>")
         res.end();
