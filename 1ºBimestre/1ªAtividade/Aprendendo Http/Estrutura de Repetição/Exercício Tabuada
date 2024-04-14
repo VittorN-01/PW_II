@@ -3,6 +3,8 @@ const url = require("url");
 
 const porta = 5000;
 
+console.log("Exercício Tabuada");
+
 http.createServer((req, res) => {
     res.setHeader("Content-Type", "text/html");
 
@@ -14,7 +16,7 @@ http.createServer((req, res) => {
     </head>
     `);
 
-    console.log("Exercício Tabuada");
+    
     const urlInfo = url.parse(req.url, true);
     const num = parseInt(urlInfo.query.num);
 
@@ -39,6 +41,7 @@ http.createServer((req, res) => {
         res.write("<ul>");
         do {
             res.write(`<li>${num} x ${i} = ${num * i}</li>`);
+            console.log(num + " x " + i + " = " + num*i)
             i++;
         } while (i <= 10);
         res.write("</ul>");
