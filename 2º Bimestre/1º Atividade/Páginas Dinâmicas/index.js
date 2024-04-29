@@ -3,6 +3,8 @@ const url = require("url")
 const fs = require("fs")
 const porta = 5000
 
+console.log("Exercício nomeIdade")
+
 http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": "text/html" })
     
@@ -11,9 +13,15 @@ http.createServer((req, res) => {
     const anoNasc = parseInt(urlInfo.query.anoNasc)
     const anoAtual = parseInt(urlInfo.query.anoAtual)
 
-    let inicio = fs.readFileSync('inicio.html')
-    let fim = fs.readFileSync('fim.html')
-    let resposta = fs.readFileSync('resposta.html', 'utf8')
+    let inicio = fs.readFileSync('inicio.html', (err, data) => {
+        return data
+    })
+    let fim = fs.readFileSync('fim.html', (err, data) =>{
+        return data
+    })
+    let resposta = fs.readFileSync('resposta.html', 'utf8', (err, data) => {
+        return data
+    })
 
     if (!nome || isNaN(anoNasc) || isNaN(anoAtual)) {
         res.write(inicio)
