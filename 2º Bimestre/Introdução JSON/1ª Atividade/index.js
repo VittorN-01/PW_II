@@ -115,17 +115,18 @@ http.createServer((req, res) => {
             descricao: "No seu aniversário de treze anos, Anne Frank ganhou um caderno de seu pai e decidiu que iria usá-lo como diário, e começou a escrever quase que imediatamente."
         }
     ]
-    
+    // Modificando para JSON
     let livrosJson = JSON.stringify(livros, null, 4);
 
+    // Criando e editando o arquivo .txt
     fs.writeFile('livros.txt', livrosJson, (err) => {
         if (err) {
-            console.error('Erro ao escrever o arquivo', err)
             res.writeHead(500, { 'Content-Type': 'text/plain' })
+            console.error('Erro ao escrever o arquivo', err)
             res.end('Erro ao escrever o arquivo')
         } else {
-            console.log('Arquivo escrito com sucesso')
             res.writeHead(200, { 'Content-Type': 'text/plain' })
+            console.log('Arquivo escrito com sucesso')
             res.end('Arquivo criado com sucesso')
         }
     })
