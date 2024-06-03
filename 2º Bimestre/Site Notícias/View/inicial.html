@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="stylesheet" href="/css/imagens.css">
+    <link rel="stylesheet" href="/css/estrutura.css">
+    <link rel="stylesheet" href="/css/letras.css">
+    <title>MoVi Notícias</title>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <h2>MoVi Notícias</h2>
+      <h5><a href="http://localhost:5000/sobre">Sobre</a></h5>
+    </div>
+    <div class="collapse" id="navbarToggleExternalContent">
+    <br>
+    <ul>
+      <li><a href="http://localhost:5000/urgente">Caso do Professor</a></li>
+      <li><a href="http://localhost:5000/festaJunina">Caso da Festa Junina</a></li>
+      <li><a href="http://localhost:5000/quimicaArcoIris">Caso "Toque de Unicórnio"</a></li>
+      <li><a href="http://localhost:5000/noticiaExclusiva">Notícia Exclusiva</a></li>
+      <li><a href="http://localhost:5000/oIncrivelCurso">O Incrível Curso</a></li>
+    </ul>
+    </div>
+  </nav>
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/img/carrossel.png" class="carousel">
+      </div>
+      <div class="carousel-item">
+        <img src="/img/carrossel.png" class="carousel">
+      </div>
+      <div class="carousel-item">
+        <img src="/img/carrossel.png" class="carousel">
+      </div>
+      <div class="carousel-item">
+        <img src="/img/carrossel.png" class="carousel">
+      </div>
+    </div>
+  </div>
+  <br>
+  <h1><b>Principais Notícias</b></h1>
+  <div class="grid">
+    <div id="noticia">
+      <h3><b>Urgente</b></h3>
+      <img src="/img/Rodrigo.jpg" class="imgNot">
+      <br>
+      <div id="box">
+        <p>
+          <b>
+            Professor Rodrigo se despede em clima de tristeza
+          </b>
+        </p>
+      </div>
+      <button>
+        <a href="http://localhost:5000/urgente">Veja Mais</a>
+      </button>
+      <br>
+      <br>
+    </div>
+    <div id="noticia">
+      <h3><b>Festa Junina</b></h3>
+      <img src="/img/FestaJunina.jpg" class="imgNot">
+      <br>
+      <div id="box">
+        <p>
+          <b>
+            Estão preparados para a festa junina ?
+          </b>
+        </p>
+      </div>
+      <button>
+        <a href="http://localhost:5000/festaJunina">Veja Mais</a>
+      </button>
+      <br>
+      <br>
+    </div>
+    <div id="noticia">
+      <h3><b>Química Arco-Íris com Toque de Unicórnio</b></h3>
+      <img src="/img/Quimica.jpg" class="imgNot">
+      <br>
+      <div id="box">
+        <p>
+          <b>
+            Etec de Cidade Tiradentes, conhecida por suas ideias malucas, está lançando um novo curso de química que promete fazer os alunos rirem enquanto aprendem
+          </b>
+        </p>
+      </div>
+      <button>
+        <a href="http://localhost:5000/quimicaArcoIris">Veja Mais</a>
+      </button>
+      <br>
+      <br>
+    </div>
+    <div id="noticia">
+      <h3><b>Notícia Exclusiva</b></h3>
+      <img src="/img/Adm.jpg" class="imgNot">
+      <br>
+      <div id="box">
+        <p>
+          <b>Etec de Cidade Tiradentes Revoluciona o Ensino de Administração com Café!</b>
+        </p>
+      </div>
+      <button>
+        <a href="http://localhost:5000/noticiaExclusiva">Veja Mais</a>
+      </button>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div id="noticia">
+    <h3><b>O incrível curso</h3> 
+      <h4>DESENVOLVIMENTO DE SISTEMAS</b></h4>
+    <img src="/img/DS.jpg" class="imgNot">
+    <br>
+    <div id="box" style="margin-left: 39%;">
+      <p>
+        <b>Escola Técnica Estadual (Etec) de Cidade Tiradentes está comemorando uma conquista incrível: seu curso de Desenvolvimento de Sistemas (DS) foi eleito o melhor da escola! </b>
+      </p>
+    </div>
+    <button>
+      <a href="http://localhost:5000/oIncrivelCurso">Veja Mais</a>
+    </button>
+  </div>
+</body>
+</html>
