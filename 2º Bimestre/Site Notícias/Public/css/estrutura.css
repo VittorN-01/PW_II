@@ -1,0 +1,22 @@
+#noticia{
+    text-align: center;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+button{
+    border-radius: 3px;
+    background-color: black;
+}
+#box{
+    display: flex;
+    justify-content: center;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-image:url("/img/fundoMadeira.jpg");
+    margin-left: 28%;
+    width: 348px;
+    height: 150px;
+    align-items: center;
+}
