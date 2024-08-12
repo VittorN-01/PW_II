@@ -1,0 +1,48 @@
+h1{
+    color: black;
+    text-align: center;
+}
+h2, li, a, p{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: white;
+}
+a:active{
+    color: white;
+}
+li{
+    text-decoration: underline;
+}
+h3{
+    animation: blink 1s infinite;
+}
+h4{
+    animation: dsColor 2s infinite;   
+}
+@keyframes blink {
+    0% {
+        color: red;
+    }
+    50% {
+        color: black;
+    }
+    100% {
+        color: red;
+    }
+}
+@keyframes dsColor {
+    0% {
+        color: blue;
+        font-size: 24px;
+    }
+    50% {
+        color: white;
+        font-size: 28px;
+    }
+    100% {
+        color: blue;
+        font-size: 24px;
+    }
+}
