@@ -1,0 +1,19 @@
+{{> nav2}}
+<h1><b>Notícia Exclusiva</b></h1>
+<br>
+<div id="noticia">
+    <h3>Etec de Cidade Tiradentes <b>Revoluciona</b> o Ensino de Administração com Café!</h3>
+    <img src="/img/Adm.jpg" class="imgPag">
+    <br>
+    <br>
+    <div id="box" style="width: 100%; margin-left:0%; background-image: none; height: auto;">
+        {{#each noticias}}
+            {{#if (eq this.id 4)}}
+                {{#if this.desc}}
+                    <h5>{{this.desc}}</h5>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <h5>P.S.: Os estudantes também aprendem a fazer chá, mas isso é apenas para os mais ousados.</h5>
+</div>

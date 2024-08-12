@@ -1,0 +1,18 @@
+{{> nav2}}
+<h1><b>Toque de Unicórnio</b></h1>
+<br>
+<div id="noticia">
+    <h3>Etec de Cidade Tiradentes, conhecida por suas ideias malucas, está lançando um novo curso de química que promete fazer os alunos rirem enquanto aprendem</h3>
+    <img src="/img/Quimica.jpg" class="imgPag">
+    <br>
+    <br>
+    <div  id="box" style="width: 100%; margin-left:0%; background-image: none; height: auto;">
+      {{#each noticias}}
+        {{#if (eq this.id 3)}}
+          {{#if this.desc}}
+            <h5>{{this.desc}}</h5>
+          {{/if}}
+        {{/if}}
+      {{/each}}
+    </div>
+</div>

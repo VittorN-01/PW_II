@@ -1,0 +1,18 @@
+{{> nav2}}
+<h1><b>Festa Junina</b></h1>
+<br>
+<div id="noticia">
+    <h3>Estão preparados para a <b>Festa Junina ?</b></h3>
+    <img src="/img/FestaJunina.jpg" class="imgPag">
+    <br>
+    <br>
+    <div id="box" style="width: 100%; margin-left:0%; background-image: none;">
+        {{#each noticias}}
+            {{#if (eq this.id 2)}}
+                {{#if this.desc}}
+                    <h5>{{this.desc}}</h5>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+    </div>
+</div>
