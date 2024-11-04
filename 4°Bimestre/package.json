@@ -1,0 +1,20 @@
+{
+  "name": "vibrafut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.19.2",
+    "express-handlebars": "^8.0.1",
+    "mssql": "^11.0.1",
+    "mysql2": "^3.11.3",
+    "node": "^22.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

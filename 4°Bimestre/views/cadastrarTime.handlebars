@@ -1,0 +1,57 @@
+{{> nav2}}
+<div id="container">
+    <div class="time-data">
+        <h2>Dados do time</h2>
+        <form id="cadastroTimeForm" action="/cadastrarTime" method="POST">
+            <div class="field">
+                <label for="nome">Nome do Time:</label>
+                <span>=</span>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="field">
+                <label for="abreviacao">Abreviação:</label>
+                <span>=</span>
+                <input type="text" id="abreviacao" name="abreviacao" required 
+                    pattern="[A-Z]{3}" title="A abreviação deve ter exatamente 3 letras maiúsculas." 
+                    oninput="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="field">
+                <label for="nTecnico">Técnico:</label>
+                <span>=</span>
+                <input type="text" id="nTecnico" name="nTecnico" required>
+            </div>
+            <div class="field">
+                <label for="nTreinador">Treinador:</label>
+                <span>=</span>
+                <input type="text" id="nTreinador" name="nTreinador" required>
+            </div>
+            <div class="serie-options">
+                <input type="radio" id="serieA" name="serie" value="Série A" required>
+                <label for="serieA">Série A</label>
+                <input type="radio" id="serieB" name="serie" value="Série B" required>
+                <label for="serieB">Série B</label>
+                <button type="button" onclick="validarCadastro()">Validar</button>
+            </div>
+            <br>
+            <button type="button" onclick="reiniciarCadastro()">Reiniciar Cadastro</button>
+        </form>
+    </div>
+
+    <div class="confirmation">
+        <h3>Cadastrar Time?</h3>
+        <p>Valor = <b><span id="resValidacao"></span></b></p>
+        <div class="buttons">
+            <!-- Altere o tipo do botão para "submit" -->
+            <button type="submit" form="cadastroTimeForm" class="confirm-btn">Confirmar</button>
+            <button type="button" class="cancel-btn" onclick="reiniciarCadastro()">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="http://localhost:5000/exibirTimes">
+            <button type="button">
+                Ver o Time
+            </button>
+        </a>
+    </div>
+</div>

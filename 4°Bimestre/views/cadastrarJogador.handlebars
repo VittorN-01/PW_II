@@ -1,0 +1,47 @@
+{{> nav3}}
+<div id="container">
+    <div class="time-data">
+        <h2>Dados do Jogador</h2>
+        <form id="cadastroTimeForm" action="/cadastrarJogador" method="POST">
+            <div class="field">
+                <label for="nome">Nome do Jogador:</label>
+                <span>=</span>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="field">
+                <label for="nCamisa">Número da Camisa:</label>
+                <span>=</span>
+                <input type="text" id="nCamisa" name="nCamisa" required 
+                    pattern="[A-Z]{3}" title="O número da camisa deve ter 2 números." 
+                    oninput="this.value = this.value.toUpperCase();">
+            </div>
+            <div class="field">
+                <label for="Posição">Posição:</label>
+                <span>=</span>
+                <input type="text" id="Posição" name="Posição" required>
+            </div>
+            <div class="field">
+                <label for="QntEstrelas">Quantidade de Estrelas:</label>
+                <span>=</span>
+                <input type="text" id="QntEstrelas" name="QntEstrelas" required>
+            </div>
+            <div class="field">
+                <label for="Nome Time">Nome do Time:</label>
+                <span>=</span>
+                <input type="text" id="Nome Time" name="Nome Time" required>
+            </div>
+            <br>
+            <button type="button">Confirmar Cadastro</button>
+            <button type="button" onclick="reiniciarCadastro()">Reiniciar Cadastro</button>
+        </form>
+    </div>
+
+    <div class="confirmation">
+        <h3>Cadastrar Jogador?</h3>
+        <p>Valor = <b><span id="resValidacao"></span></b></p>
+        <div class="buttons">
+            <!-- Altere o tipo do botão para "submit" -->
+            <button type="submit" form="cadastroTimeForm" class="confirm-btn">Confirmar</button>
+            <button type="button" class="cancel-btn" onclick="reiniciarCadastro()">Cancelar</button>
+        </div>
+    </div>
